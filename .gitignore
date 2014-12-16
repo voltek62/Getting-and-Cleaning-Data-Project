@@ -1,2 +1,4 @@
 data
 *.txt
+*.Rproj
+.Rproj.user
