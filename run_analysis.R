@@ -39,16 +39,16 @@ for (activity in activities$V2) {
 }
 
 # step 4 : Appropriately labels the data set with descriptive variable names. 
-
-names(dt_extract) <- gsub("Acc", " Accelerator ", names(dt_extract))
-names(dt_extract) <- gsub("-mean", " Mean ", names(dt_extract))
-names(dt_extract) <- gsub("-std", " Standard ", names(dt_extract))
-names(dt_extract) <- gsub("Gyro", " Gyroscope ", names(dt_extract))
-names(dt_extract) <- gsub("()", " ", names(dt_extract))
-
 # step 5 : From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 dt_result = aggregate(dt_extract, by=list(dt_extract$activity, as.factor(dt_extract$subject)), mean)
+
+names(dt_result) <- gsub("Acc", " Accelerator ", names(dt_result))
+names(dt_result) <- gsub("-mean", " Mean ", names(dt_result))
+names(dt_result) <- gsub("-std", " Standard ", names(dt_result))
+names(dt_result) <- gsub("Gyro", " Gyroscope ", names(dt_result))
+names(dt_result) <- gsub("()", " ", names(dt_result))
+
 colnames(dt_result)[1] <- "activity"
 colnames(dt_result)[2] <- "subject"
 
@@ -56,4 +56,4 @@ colnames(dt_result)[2] <- "subject"
 dt_result[,ncol(dt_result)] <- NULL
 dt_result[,ncol(dt_result)] <- NULL
 
-write.table(dt_result, "result.txt", sep="\t")
+write.table(dt_result, "result.txt", sep="\t", row.name=FALSE)
