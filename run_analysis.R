@@ -47,7 +47,7 @@ names(dt_result) <- gsub("Acc", " Accelerator ", names(dt_result))
 names(dt_result) <- gsub("-mean", " Mean ", names(dt_result))
 names(dt_result) <- gsub("-std", " Standard ", names(dt_result))
 names(dt_result) <- gsub("Gyro", " Gyroscope ", names(dt_result))
-names(dt_result) <- gsub("()", " ", names(dt_result))
+#names(dt_result) <- gsub("()", " ", names(dt_result))
 
 colnames(dt_result)[1] <- "activity"
 colnames(dt_result)[2] <- "subject"
@@ -56,4 +56,4 @@ colnames(dt_result)[2] <- "subject"
 dt_result[,ncol(dt_result)] <- NULL
 dt_result[,ncol(dt_result)] <- NULL
 
-write.table(dt_result, "result.txt", sep="\t", row.name=FALSE)
+write.table(dt_result, "result.txt", row.name=FALSE)
