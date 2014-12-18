@@ -5,14 +5,14 @@ Getting-and-Cleaning-Data-Project
 Run_analysis.R
 
 1. Merges the training and the test sets to create one data set.
-Inouts : X_test.txt, Y_test.txt, subject_test.txt, X_train.txt, Y_train.txt, subject_train.txt 
+Inputs : X_test.txt, Y_test.txt, subject_test.txt, X_train.txt, Y_train.txt, subject_train.txt 
 Functions : read.table, rbind, colnames 
 
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 Functions : grep, colnames 
 
 3. Uses descriptive activity names to name the activities in the data set
-Inouts : activity_labels.txt
+Inputs : activity_labels.txt
 Function : gsub 
 
 4. Appropriately labels the data set with descriptive variable names. 
